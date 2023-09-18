@@ -87,6 +87,7 @@ body {
 /*NAVIGATION*/
 .navigation {
   //position: absolute;
+  //display: flex;
   //top: 22vh;
   //left: 20vh;
   width: 45vh;
@@ -109,6 +110,10 @@ body {
       text-decoration: none;
       cursor: pointer;
       color: $color_two;
+    }
+
+    a:hover{
+      color: orange;
     }
   }
 }
@@ -187,5 +192,3 @@ body {
     padding: 5vh 10vh;
   }
 }
-
-
