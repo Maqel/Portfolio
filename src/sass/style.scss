@@ -6,7 +6,9 @@ $font-heading: 'Oswald', sans-serif;
 
 /*COLORS*/
 $color_one: #887474;
-$color_two: #000000;
+$color_second: #000000;
+$color_third: #FFFFFF;
+$fourth_color: #ff5349;
 
 /*GLOBAL*/
 *, *::before, *::after {
@@ -14,138 +16,120 @@ $color_two: #000000;
 }
 
 body {
-  background-image: url("/images/background.webp");
-  //background-attachment: fixed;
   background-color: $color_one;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url('../images/background_triangles.webp');
   font-family: $font-main;
-  color: #FFFFFF;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  line-height: 1.7;
-  font-size: 16px;
-  overflow: hidden;
+  //font-size: 18px;
+  height: 100vh;
+  //width: 100vh;
+  //color: #FFFFFF;
+  // margin: 0;
+  // padding: 0;
+  // line-height: 1.7;
+  // font-size: 16px;
+  // overflow: hidden;
 }
+
+/*HEADER*/
 
 .header {
-  font-family: $font-heading;
-  //position: absolute;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.navbar {
   width: 100%;
-  height: 23vh;
-  //padding-top:10px;
-}
-
-.header_content {
-  position: relative;
-  //display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  left: 20vh;
-  width: 85%;
-  height: 15vh;
-  //background-color: $color_one;
-}
-
-.logo_container {
-  position: relative;
-  width: 35vh;
-  height: 20vh;
-  right: 15vh;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin: 5vh 0vh;
+  justify-content: space-between;
 
-  .logo_img {
-    width: 20vh;
-    height: 20vh;
-    border-radius: 100%;
-    outline: 10px outset #d64e00;
-    outline-offset: -5px;
-    transition: all .3s ease-in-out;
-
-    &:hover {
-      outline: 10px inset $color_one;
-      outline-offset: -5px;
-      transition: all .3s ease-in-out;
-    }
+  .logo a {
+    position: relative;
+    top: 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
   }
 
-  .logo_sub {
-    font-size: 12px;
-
-    h1 {
-      writing-mode: vertical-lr;
-      text-transform: uppercase;
-    }
+  .links {
+    display: flex;
+    gap: 2rem;
   }
 }
-
-/*NAVIGATION*/
-.navigation {
-  //position: absolute;
-  //display: flex;
-  //top: 22vh;
-  //left: 20vh;
-  width: 45vh;
-  height: 100%;
-  //display:  flex;
-  // align-items: flex-start;
-  // justify-content: flex-end;
+.maq {
+  position: relative;
+  left: 8rem; // KLASA WŁASNA PRZESUNIĘCIE NAVIGACJI I GET STARTED
 }
 
-.nav_container {
-  width: 50vh;
-  padding-left: 5vh;
-  //margin: 0vh 10vh;
-  list-style-type: none;
+// .logo img{
+//   width: 20vh;
+//   height: 20vh;
+// }
 
-  .nav_link_wrapper {
-    display: inline-block;
+/*---NAVIGATION---*/
 
-    a {
-      text-decoration: none;
-      cursor: pointer;
-      color: $color_two;
-    }
+li {
+  list-style: none;
+}
 
-    a:hover{
-      color: orange;
-    }
+a{
+  text-decoration: none;
+  color: $color_third;font-size: 1rem;
+
+  &:hover {
+    color: $fourth_color;
   }
 }
 
-.menu-btn {
+.action_btn {
+  background-color: $fourth_color;
+  color: $color_third;
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+
+  &:hover {
+    color: $color_second;
+    //transform: translateX(3px); //Pokombinuj z tym transform dodaj jakiś box shadow i poczytaj o bbciąeniach strony tymi 2 właściwościami poszukaj inspiracji w innych projektach coś w stylu cienia i przesunięcia po kliknięciu (tu te skończyłem edycję czas filmu 6:19
+  }
+}
+
+.toggle_btn {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  //visibility: hidden; //włącz widzialność na małych rozdzielczościach a ukryj menu kontekstowe u góry
 }
 
-.menu-btn__burger {
-  width: 50px;
-  height: 6px;
-  background: $color_two;
+.toggle_btn_burger {
+  //display: none;
+  width: 40px;
+  height: 5px;
+  background: $color_third;
   border-radius: 5px;
-  box-shadow: 0 2px 5px $color_one;
+  box-shadow: 0 2px 5px $color_second;
   transition: all .5s ease-in-out;
 
   &::before, &::after {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 6px;
-    background: $color_two;
+    width: 40px;
+    height: 5px;
+    background: $color_third;
     border-radius: 5px;
-    box-shadow: 0 2px 5px $color_one;
+    box-shadow: 0 2px 5px $color_second;
     transition: all .5s ease-in-out;
   }
 
@@ -158,8 +142,8 @@ body {
   }
 }
 
-/* ANIMATION */
-.menu-btn.open .menu-btn__burger {
+/* TOGGLE ANIMATION */
+.toggle_btn.open .toggle_btn_burger {
   transform: translateX(-50px);
   background: transparent;
   box-shadow: none;
@@ -170,25 +154,5 @@ body {
 
   &::after {
     transform: rotate(-45deg) translate(35px, 35px);
-  }
-}
-
-.home_primary_name  {
-  color: $color_one;
-  font-size: larger;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px $color_two;
-}
-
-.home {
-  width: 100%;
-  height: 100vh;
-
-  .home_content {
-    margin: 7vh 5vh;
-  }
-
-  .info_secondary {
-    padding: 5vh 10vh;
   }
 }
