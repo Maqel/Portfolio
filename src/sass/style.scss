@@ -66,11 +66,6 @@ body {
   left: 8rem; // KLASA WŁASNA PRZESUNIĘCIE NAVIGACJI I GET STARTED
 }
 
-// .logo img{
-//   width: 20vh;
-//   height: 20vh;
-// }
-
 /*---NAVIGATION---*/
 
 li {
@@ -91,18 +86,29 @@ a{
   color: $color_third;
   padding: 0.6rem 1rem;
   border: none;
-  outline: none;
+  // outline: none;
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 600;
+  transition: scale 0.2 ease;
 
   &:hover {
+    scale: 1.05;
     color: $color_second;
-    //transform: translateX(3px); //Pokombinuj z tym transform dodaj jakiś box shadow i poczytaj o bbciąeniach strony tymi 2 właściwościami poszukaj inspiracji w innych projektach coś w stylu cienia i przesunięcia po kliknięciu (tu te skończyłem edycję czas filmu 6:19
+  }
+
+  &:active {
+    scale: 0.95;
   }
 }
 
 .toggle_btn {
+  pointer-events: none; //ODPOWIADA ZA BRAK KLIKALNOŚCI BURGERA
+  visibility: hidden; // ODPOWIADA ZA UKRYCIE BURGERA
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  padding: 0;
   position: relative;
   display: flex;
   justify-content: center;
@@ -114,7 +120,6 @@ a{
 }
 
 .toggle_btn_burger {
-  //display: none;
   width: 40px;
   height: 5px;
   background: $color_third;
@@ -125,6 +130,7 @@ a{
   &::before, &::after {
     content: '';
     position: absolute;
+    right: 0px;
     width: 40px;
     height: 5px;
     background: $color_third;
@@ -156,3 +162,6 @@ a{
     transform: rotate(-45deg) translate(35px, 35px);
   }
 }
+
+/*RESPONSIVE DESIGN*/
+//SKOŃCZYŁEM PISAĆ 7:27
