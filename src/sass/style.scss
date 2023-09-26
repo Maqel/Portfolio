@@ -61,10 +61,6 @@ body {
     gap: 2rem;
   }
 }
-.maq {
-  position: relative;
-  left: 8rem; // KLASA WŁASNA PRZESUNIĘCIE NAVIGACJI I GET STARTED
-}
 
 /*---NAVIGATION---*/
 
@@ -103,16 +99,12 @@ a{
 }
 
 .toggle_btn {
-  pointer-events: none; //ODPOWIADA ZA BRAK KLIKALNOŚCI BURGERA
-  visibility: hidden; // ODPOWIADA ZA UKRYCIE BURGERA
   background: transparent;
   border: none !important;
   font-size:0;
   padding: 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -163,5 +155,57 @@ a{
   }
 }
 
+/*DROPDOWN MENU*/
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.dropdown_menu.open {
+  height: 280px;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /*RESPONSIVE DESIGN*/
-//SKOŃCZYŁEM PISAĆ 7:27
+@media(max-width:992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
+}
