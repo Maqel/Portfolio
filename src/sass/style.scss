@@ -9,6 +9,7 @@ $color_one: #887474;
 $color_second: #000000;
 $color_third: #FFFFFF;
 $fourth_color: #ff5349;
+$fifth_color: #ffa500;
 
 /*GLOBAL*/
 *, *::before, *::after {
@@ -31,12 +32,83 @@ body {
 }
 
 /*HEADER*/
-
-.header {
+.splash {
   position: relative;
   padding: 0 0.5rem;
 }
 
+/*SECTION*/
+.section {
+  display: flex;
+  flex-flow: column;
+  //justify-content: space-between;
+  position: relative;
+  top: 20vh;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  gap: 1em;
+}
+
+.hero {
+  // position: relative;
+  // top: 10vh;
+  font-size: 1.5em;
+  font-weight: bold;
+  //background-color: blue;
+  flex: 0 0 30%;
+  color: $color_third;
+
+  .hero_primary_name {
+    color: $fifth_color;
+    font-size: larger;
+  }
+
+  .hero_secondary {
+    font-size: 28px;
+
+    span {
+      font-size: small;
+      color: $fifth_color;
+    }
+  }
+}
+
+.about {
+  //background-color: orange;
+  flex: 0 0 60%;
+  height: 60vh;
+  font-size: 1.5em;
+}
+
+.experiences {
+  //background-color: yellow;
+  flex: 0 0 60%;
+  height: 50vh;
+}
+
+.projects {
+  //background-color: lightblue;
+  height: 33vh;
+  flex: 0 0 80%;
+}
+
+.contact {
+  //background-color: greenyellow;
+  flex: 0 0 30%;
+  height: 33vh;
+}
+
+footer {
+  //background-color: #fff;
+  height:20vh;
+  width: 100%;
+  flex: 0 0 10%;
+}
+
+/*NAVIGATION*/
 .navbar {
   width: 100%;
   height: 60px;
@@ -62,8 +134,7 @@ body {
   }
 }
 
-/*---NAVIGATION---*/
-
+/*---TOGGLE BUTTON---*/
 li {
   list-style: none;
 }
@@ -201,11 +272,22 @@ a{
   .dropdown_menu {
     display: block;
   }
+
+  .section {
+    top: 32%;
+  }
 }
 
 @media (max-width: 576px) {
   .dropdown_menu {
     left: 2rem;
     width: unset;
+  }
+
+  .logo {
+    position: relative;
+    writing-mode: horizontal;
+    transform: rotate(90deg);
+    left: 25%;
   }
 }
